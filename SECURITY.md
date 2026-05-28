@@ -5,8 +5,8 @@
 Currently, only the latest version of TS-Automata is being supported
 
 | Version | Supported          |
-| ------- | ------------------ |
-| 0.5.x   | :white_check_mark: |
+|---------| ------------------ |
+| 1.0.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
