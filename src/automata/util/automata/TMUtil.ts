@@ -1,4 +1,4 @@
-import { AutomatonUtil } from "./automata-util";
+import { AutomatonUtil } from "./AutomatonUtil";
 import { TM } from "../../../automata/non-context-free/TM";
 import { UndecidableProblem } from "../../../exceptions/exceptions";
 

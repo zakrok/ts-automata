@@ -4,7 +4,7 @@ import { EPSILON } from "../../../types";
 import { UndecidableProblem } from "../../../exceptions/exceptions";
 import { ChomskyConverter } from "../ChomskyConverter";
 import { ChomskyChecker } from "../ChomskyChecker";
-import { CFGCommonUtil } from "./CFGCommonUtils";
+import { CFGCommonUtil } from "./CFGCommonUtil";
 
 export class CFGUtil extends CFGCommonUtil {
     public constructor() {

@@ -1,6 +1,6 @@
 import Fixtures from "../../fixtures";
 import { describe, expect, it } from "vitest";
-import { DFAUtil } from "../../../src/automata/util/automata/DFA-util";
+import { DFAUtil } from "../../../src/automata/util/automata/DFAUtil";
 import { DFA } from "../../../src/automata/regular/DFA";
 import { DFABuilder } from "../../../src";
 import { test } from "@fast-check/vitest";

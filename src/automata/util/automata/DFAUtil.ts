@@ -1,8 +1,8 @@
 import { DFA } from "../../regular/DFA";
 import { DFAState } from "~/states/RegularStates";
 import { NFA } from "../../regular/NFA";
-import { NFAUtil } from "./NFA-util";
-import { RegularAutomatonUtil } from "./finite-automata-util";
+import { NFAUtil } from "./NFAUtil";
+import { RegularAutomatonUtil } from "./RegularAutomatonUtil";
 import { NFACombinator, StateBunchToBool } from "../NFACombinationToDFA";
 
 export class DFAUtil extends RegularAutomatonUtil<DFA> {

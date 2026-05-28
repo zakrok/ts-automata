@@ -1,7 +1,7 @@
 import { CFGVariable } from "../../states/CFGState";
 import { CFG } from "../context-free/CFG";
 import { EPSILON } from "../../types";
-import { CFGCommonUtil } from "./automata/CFGCommonUtils";
+import { CFGCommonUtil } from "./automata/CFGCommonUtil";
 
 /**
  * @class Method object for converting CFGs to Chomsky Normal Form using Sipser's method

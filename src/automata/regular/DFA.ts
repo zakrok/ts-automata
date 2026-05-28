@@ -4,7 +4,7 @@ import { IllegalArgument, IllegalAutomatonState } from "../../exceptions/excepti
 import { Alphabet } from "../Alphabet";
 import { FiniteAutomaton } from "./FiniteAutomaton";
 import { NFA } from "./NFA";
-import { DFAUtil } from "../util/automata/DFA-util";
+import { DFAUtil } from "../util/automata/DFAUtil";
 
 /**
  * Deterministic finite automaton.

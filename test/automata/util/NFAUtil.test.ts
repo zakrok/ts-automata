@@ -1,6 +1,6 @@
 import Fixtures from "../../fixtures";
 import { describe, expect, it } from "vitest";
-import { NFAUtil } from "../../../src/automata/util/automata/NFA-util";
+import { NFAUtil } from "../../../src/automata/util/automata/NFAUtil";
 import { NFA } from "../../../src/automata/regular/NFA";
 import { NFABuilder } from "../../../src";
 import { test } from "@fast-check/vitest";

@@ -1,5 +1,5 @@
 import { Automaton } from "../../../automata/Automaton";
-import { AutomatonUtil } from "./automata-util";
+import { AutomatonUtil } from "./AutomatonUtil";
 import { State } from "../../../states/State";
 
 export abstract class RegularAutomatonUtil<T extends Automaton<State>> extends AutomatonUtil<T> {
@@ -16,8 +16,8 @@ export abstract class RegularAutomatonUtil<T extends Automaton<State>> extends A
      * @param name The statename to parse
      * @returns The state names parsed from the original string
      */
-    protected nameSeperator(name: string): string[] {
-        // The name {q0}{q1}{{q2}} represents a superposition of being in
+    protected nameSeparator(name: string): string[] {
+        // The name {q0}{q1}{{q2}} represents superposition of being in
         // = q0,q1 and {q2}. we check for nested braces.
         let openBrackets = 0;
         const result = [];

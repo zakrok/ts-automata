@@ -2,9 +2,8 @@ import { DFA } from "../regular/DFA";
 import { DFABuilder } from "./builders/automata/DFABuilder";
 import { NFA } from "../regular/NFA";
 import { NFAState } from "../../states/RegularStates";
-import { Operator, char } from "../../types";
-import { NFAUtil } from "./automata/NFA-util";
-import { resourceUsage } from "process";
+import { char, Operator } from "../../types";
+import { NFAUtil } from "./automata/NFAUtil";
 import { IllegalArgument } from "../../exceptions/exceptions";
 
 // When combining two NFAs the first passed NFA is prefixed with {prefixForNfaOne}

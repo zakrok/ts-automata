@@ -1,9 +1,9 @@
-import { DFAUtil } from "./DFA-util";
+import { DFAUtil } from "./DFAUtil";
 import { EPSILON } from "../../../types";
 import { NFA } from "../../regular/NFA";
 import { NFAConverter } from "../NFAConverter";
 import { NFAState } from "~/states/RegularStates";
-import { RegularAutomatonUtil } from "./finite-automata-util";
+import { RegularAutomatonUtil } from "./RegularAutomatonUtil";
 import { NFACombinator, StateBunchToBool } from "../NFACombinationToDFA";
 export class NFAUtil extends RegularAutomatonUtil<NFA> {
     /**

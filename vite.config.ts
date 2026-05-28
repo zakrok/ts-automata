@@ -17,8 +17,7 @@ export default defineConfig({
     plugins: [
         dts({
             insertTypesEntry: true,
-            outDir: "dist",
-            rollupTypes: true
+            outDirs: "dist",
         })
     ]
 });
