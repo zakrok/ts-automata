@@ -169,6 +169,39 @@ describe("NFAUtil: Reverse", () => {
             expect(enfa.runString(words[i].split("").reverse().join(""))).toBe(expected[i]);
         }
     });
+    it("preserves both edges of a 2-cycle on the same symbol", () => {
+        const nfa = new NFABuilder("a")
+            .withFinalStates("q0")
+            .withNotFinalStates("q1")
+            .withEdges.from("q0")
+            .to("q1")
+            .over("a")
+            .withEdges.from("q1")
+            .to("q0")
+            .over("a")
+            .getResult();
+        const reversed = new NFAUtil().reverse(nfa);
+        for (const word of ["", "a", "aa", "aaa", "aaaa"]) {
+            expect(reversed.runString(word)).toBe(nfa.runString(word));
+        }
+    });
+    it("preserves both edges of an epsilon 2-cycle", () => {
+        const nfa = new NFABuilder("a")
+            .withNotFinalStates("q0", "q1")
+            .withFinalStates("q2")
+            .withEdges.from("q0")
+            .to("q1")
+            .epsilon()
+            .withEdges.from("q1")
+            .to("q0")
+            .epsilon()
+            .withEdges.from("q0")
+            .to("q2")
+            .over("a")
+            .getResult();
+        const util = new NFAUtil();
+        expect(util.equal(util.reverse(nfa), nfa)).toBe(true);
+    });
 });
 describe("NFAUtil: Empty", () => {
     it("should return true for non-empty NFA", () => {

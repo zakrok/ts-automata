@@ -132,21 +132,21 @@ export class NFAUtil extends RegularAutomatonUtil<NFA> {
      * @param newNfa The new NFA that the edges should be reversed in
      */
     private reverseEdges(statesOldNfa: Set<NFAState>, mappingFunc: (arg0: string) => string, newNfa: NFA) {
+        const edges: { from: string; to: string; symbol: string }[] = [];
         statesOldNfa.forEach(state => {
             const from = mappingFunc(state.name);
             state.transitions.forEach((toStates, symbol) => {
-                // Go through each edge and reverse it in the new NFA
-                toStates.forEach(to => {
-                    const toMapped = mappingFunc(to.name);
-                    if (symbol == EPSILON) {
-                        newNfa.removeEpsilonEdge(from, toMapped);
-                    } else {
-                        newNfa.removeEdge(from, symbol, toMapped);
-                    }
-                    this.addEdgeWithPossibleEpsilon(newNfa, toMapped, from, symbol);
-                });
+                toStates.forEach(to => edges.push({ from, to: mappingFunc(to.name), symbol }));
             });
         });
+        edges.forEach(({ from, to, symbol }) => {
+            if (symbol == EPSILON) {
+                newNfa.removeEpsilonEdge(from, to);
+            } else {
+                newNfa.removeEdge(from, symbol, to);
+            }
+        });
+        edges.forEach(({ from, to, symbol }) => this.addEdgeWithPossibleEpsilon(newNfa, to, from, symbol));
     }
 
     /**
